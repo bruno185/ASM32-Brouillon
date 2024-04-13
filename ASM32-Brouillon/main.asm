@@ -18,7 +18,8 @@ local hConsole:dword
 
 ;comment #
 ;Exploration des LEA vs MOV 
-    lea eax,dwWritten           ; dwWritten est dans le stack (varaiable locale)
+    mov eax,dwWritten           ; contenu de la variable dwWritten ans eax
+    lea eax,dwWritten           ; dwWritten est dans le stack (varaiable locale), adresse de dwWritten dans eax
     mov dwWritten,0AAAAAAAAh    ; valeur 0AAAAAAAAh copiée à l'adresse de dwWritten. Voir le CODE MACHINE
     mov dword ptr [eax],0CCCCCCCCh; fait la m^^eme chose, mais en utilisant le pointeur
     mov ebx,dwWritten           ; valeur récupérée dans ebx 
